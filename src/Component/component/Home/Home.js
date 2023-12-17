@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import LeftSide from "./component/Home/LeftSide";
-import RightSide from "./component/Home/RightSide";
-
+import LeftSide from "./LeftSide";
+import RightSide from "./RightSide";
+import bgImg from "../../../assets/img/herobg.png" 
 const Home = () => {
     const [isSmall,setIsSmall] =useState(false);
     useEffect(() => {
@@ -17,14 +17,17 @@ const Home = () => {
           window.removeEventListener('resize', checkScreenSize);
         };
       }, []);
-    return(<div>
-{isSmall?<div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 bg-slate-800 relative " >
+    return(<div className="lg:w-100%  md:w-50%  w-25% h-full " style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      {isSmall?<div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 relative " >
     <RightSide/><LeftSide/></div>
     :  
-    <div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 bg-slate-800 relative " >
+    <div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  relative " >
  <LeftSide/>
         <RightSide/></div>
     }
+
+
         </div>
 )
 }
