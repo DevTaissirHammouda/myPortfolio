@@ -7,10 +7,11 @@ import Skills from '../skills/Skills'
 const About = () => {
   
   return (
-    <Section  title="About Me">
+    <div id="about" >
+    <Section   title="About Me" >
        
-      <div className="about-content  text-left text-slate-50 h-full relative m-32">
-        <div className="absu w-[300px] ml-[150px] inset-0 gradient-01  "/>
+      <div  className="about-content text-left text-slate-50 h-full relative md:m-32">
+        <div className="absu w-[300px] md:ml-[150px] inset-0 gradient-01 bg-slate-400 "/>
         
           <div className="about-text z-[9]">
             <h2 className='text-[40px] font-bold'>Who am I?</h2>
@@ -54,7 +55,7 @@ solutions that solve real-world problems{' '}
               </div>
         <Skills />
       </div>
-    </Section>
+    </Section></div>
   )
 }
 

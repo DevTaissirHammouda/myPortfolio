@@ -1,26 +1,74 @@
 
-        import { Fragment } from 'react'
+        import { Fragment ,useState,useEffect} from 'react'
         import { Disclosure, Menu, Transition } from '@headlessui/react'
         import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import taissir from "../assets/img/taissir.jpg"
+import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll'
         const navigation = [
-          { name: 'Home', href: '/', current: true },
-          { name: 'About', href: 'about', current: false },
-          { name: 'Projects', href: 'project', current: false },
-          { name: 'CV', href: '#', current: false },
-          { name: 'Contact', href: 'contact', current: false },
+          { name: 'Home', href: '#', current: true },
+          { name: 'About', href: '#about', current: false },
+          { name: 'Projects', href: '#Project', current: false },
+          { name: 'resumer', href: '#resumer', current: false },
+          { name: 'Contact', href: '#contact', current: false },
         ]
+        export default function Navigation() {
+          const [currentLink, setCurrentLink] = useState(navigation.find((item) => item.current)|| navigation[0]);
+        
+          const handleLinkClick = (item) => {
+            setCurrentLink(item);
+          };
         
         function classNames(...classes) {
           return classes.filter(Boolean).join(' ')
         }
         
-        export default function Navigation() {
+        
+  useEffect(() => {
+    const handleScroll = () => {
+      // Update the currentItem based on the scroll position
+      const scrollPosition = window.scrollY;
+
+      // Check if the "Home" item is in view
+      if (scrollPosition < 50) {
+        if (currentLink !== navigation[0]) {
+          setCurrentLink(navigation[0]);
+        }
+        return;
+      }
+      for (const item of navigation) {
+        const section = document.getElementById(item.href.substring(1));
+
+        if (section) {
+          const offset = section.offsetTop - 50; // Adjust the offset based on your design
+
+          if (scrollPosition >= offset && scrollPosition < offset + section.offsetHeight) {
+            if (item !== currentLink) {
+              setCurrentLink(item);
+            }break;}
+            else if (scrollPosition==Element.scrollTop)
+            {item=navigation[0];
+              setCurrentLink(item);}
+            
+            
+          
+        }
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [currentLink, navigation]);
+
           return (
-            <Disclosure as="nav" className="bg-gray-800">
+            <Disclosure as="nav" className="bg-gray-800 fixed w-full z-50">
               {({ open }) => (
                 <>
-                  <div className="  px-2 sm:px-6 lg:px-8">
+                  <div className="  px-2 sm:px-6 lg:px-8 ">
                     <div className="relative flex h-16 items-center justify-between">
                       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
@@ -35,24 +83,19 @@ import taissir from "../assets/img/taissir.jpg"
                         </Disclosure.Button>
                       </div>
                       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex flex-shrink-0 items-center">
-                          <img
-                            className="h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company"
-                          />
-                        </div>
+                       
                         <div className="hidden sm:ml-6 sm:block">
                           <div className="flex space-x-4">
                             {navigation.map((item) => (
-                              <a
+                                <a
                                 key={item.name}
                                 href={item.href}
+                                onClick={() => handleLinkClick(item)}
                                 className={classNames(
-                                  item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                  item === currentLink ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                   'rounded-md px-3 py-2 text-sm font-medium'
                                 )}
-                                aria-current={item.current ? 'page' : undefined}
+                                aria-current={item === currentLink ? 'page' : undefined}
                               >
                                 {item.name}
                               </a>
@@ -83,20 +126,25 @@ import taissir from "../assets/img/taissir.jpg"
         
                   <Disclosure.Panel className="sm:hidden">
                     <div className="space-y-1 px-2 pb-3 pt-2">
-                      {navigation.map((item) => (
-                        <Disclosure.Button
-                          key={item.name}
-                          as="a"
-                          href={item.href}
-                          className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                            'block rounded-md px-3 py-2 text-base font-medium'
-                          )}
-                          aria-current={item.current ? 'page' : undefined}
-                        >
-                          {item.name}
-                        </Disclosure.Button>
-                      ))}
+                    {navigation.map((item) => (
+            <div key={item.name} className={item === currentLink ? 'block sm:hidden' : 'hidden'}>
+              {item.current && (
+                <div className="space-y-1 px-2 pb-3 pt-2">
+                  <Disclosure.Button
+                    as="a"
+                    href={item.href}
+                    className={classNames(
+                      'bg-gray-900 text-white',
+                      'block rounded-md px-3 py-2 text-base font-medium'
+                    )}
+                    aria-current={item === currentLink ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                </div>
+              )}
+            </div>
+          ))}
                     </div>
                   </Disclosure.Panel>
                 </>

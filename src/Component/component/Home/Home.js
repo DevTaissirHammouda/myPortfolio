@@ -17,7 +17,7 @@ const Home = () => {
           window.removeEventListener('resize', checkScreenSize);
         };
       }, []);
-    return(<div className="lg:w-100%  md:w-50%  w-25% h-full " style={{ backgroundImage: `url(${bgImg})` }}
+    return(<div id="#" className="lg:w-100%  md:w-50%  w-25% h-full " style={{ backgroundImage: `url(${bgImg})` }}
     >
       {isSmall?<div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 relative " >
     <RightSide/><LeftSide/></div>
