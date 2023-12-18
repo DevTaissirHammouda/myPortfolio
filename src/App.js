@@ -5,17 +5,20 @@ import {motion} from 'framer-motion';
 import About from './Component/component/About/about/About';
 import Project from './Component/component/Project/Project';
 import Contact from './Component/component/Contact/Contact/Contact';
+import Footer from './Component/component/Footer/Footer';
+import './Scrollbar.css';
 function App() {
-  return (
-    <div className="App">
-    
+
+
+  return ( 
+    <div className="App scrollable-container">
         <Navigation/>
         <Home/>
         <About/>
         <Project/>
         <Contact/>
+        <Footer/>
         </div>
-        
   );
 }
 

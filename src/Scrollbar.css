@@ -1,0 +1,24 @@
+/* Scrollbar.css */
+
+/* Track */
+::-webkit-scrollbar {
+    width: 12px;
+   
+  }
+  ::-webkit-scrollbar {
+    height: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #2f0846;
+    border-radius: 6px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #2e085f;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgb(2, 10, 31);
+  }

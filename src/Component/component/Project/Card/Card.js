@@ -24,7 +24,7 @@ const Card = () => {
               <figure>
                 <div className="img-bg"></div>
                 <img src={item.imge} alt={item.title} />
-                <figcaption>{item.title}</figcaption>
+                <figcaption className="text-white font-bold">{item.title}</figcaption>
               </figure>
               <ul>
                 <li>{item.desc}</li>

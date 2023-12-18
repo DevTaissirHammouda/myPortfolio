@@ -1,22 +1,16 @@
-import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Switch } from '@headlessui/react'
+
 import Section from '../section/Section'
   
  const  Contact =()=> {
-     const [agreed, setAgreed] = useState(false)
-    function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
- 
-}
-    return (<div id="contact" className="bg-slate-900 relative overflow-hidden  ">
-        <div className="absolute w-[300px] inset-0 md:ml-[400px]  gradient-04 "/>
+   
+    return (<div id="contact" className="bg-slate-900 relative overflow-hidden  z-[0]">
+        <div className="absolute w-[300px] inset-0 md:ml-[400px]  gradient-04 z-[-2]"/>
        
 
-<Section title="Contact" className="z-50">
+<Section title="Contact" >
 
 
-
+<div className="z-9">
       <div className="mx-auto max-w-2xl text-center ">
         <p className="mt-10 text-[25px] leading-8 text-purple-800">
           I'm Available Contact Me
@@ -65,10 +59,10 @@ import Section from '../section/Section'
             Let's talk
           </button>
         </div>
-      </form>
+      </form></div>
      </Section> 
-     
      </div>
+     
   
 
 
