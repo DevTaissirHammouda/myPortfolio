@@ -1,12 +1,12 @@
 .about {
   background: rgb(2,52,168);
-  background: linear-gradient(0deg, rgb(3, 26, 80) 33%, rgb(5, 35, 73) 47%, rgb(0, 0, 0) 79%);
+  background: linear-gradient(0deg,  rgb(15 23 42) 33%, rgb(0, 0, 0) 79%);
 }
 .absu{
   position: absolute;
   margin-left: 300px;
-  
-  inset: 150px;
+
+  inset: 300px;
 }
 .about-text {
   width: 100%;

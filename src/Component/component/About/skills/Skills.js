@@ -49,7 +49,7 @@ const Skills = () => {
         <IsVisible once="false">
           {(isVisibleSkillsWrapper) => (
             <div
-              className="skills-wrapper mb-44"
+              className="skills-wrapper "
               style={
                 isVisibleSkillsWrapper
                   ? {
@@ -60,7 +60,7 @@ const Skills = () => {
                   : {}
               }
             >
-              <h2 className='font-bold text-[25px] mb-5'>Skills</h2>
+              <h2 className='font-bold text-[25px] '>Skills</h2>
               <ul className="skills" ref={skillsWrapper}>
                 {skills.map((skills) => {
                   return (

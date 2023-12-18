@@ -7,11 +7,11 @@ import Skills from '../skills/Skills'
 const About = () => {
   
   return (
-    <div id="about" className='relative'>
+    <div id="about" className='relative overflow-hidden '>
     <Section   title="About Me" >
        
       <div  className="about-content text-left text-slate-50 h-full  ">
-        <div className="absu w-[300px] md:ml-[150px] inset-0 gradient-01 bg-slate-400 "/>
+        <div className="absu w-[300px] md:ml-[150px]  gradient-01 bg-slate-400 "/>
         
           <div className="about-text z-[9]  md:m-32">
             <h2 className='text-[40px] font-bold'>Who am I?</h2>

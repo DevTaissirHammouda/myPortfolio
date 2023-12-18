@@ -16,7 +16,7 @@ const LeftSide = () => {
 <div className="my-[20px] text-white">You only live once, but if you do it right, once is enough
 </div>
 <a href="#" className="">
-    <button className="bg-green-500 rounded-md p-[3px]">Contact Me</button>
+    <button className="bg-green-500 text-white rounded-md p-[3px]">Contact Me</button>
 </a>
 </div>
 </div>
