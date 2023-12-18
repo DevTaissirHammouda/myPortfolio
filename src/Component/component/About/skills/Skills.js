@@ -45,7 +45,7 @@ const Skills = () => {
   return (
     
 
-      <div style={{ position: 'relative', width: '100%', maxWidth: 600 }} >
+      <div className='md:m-32' style={{ position: 'relative', width: '100%', maxWidth: 600 }} >
         <IsVisible once="false">
           {(isVisibleSkillsWrapper) => (
             <div
