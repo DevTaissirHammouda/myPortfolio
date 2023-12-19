@@ -1,23 +1,24 @@
 
 import Section from '../section/Section'
-  
+import {motion} from "framer-motion"
+import {zoomIn,navVariants} from "../../../../utils/motion";
  const  Contact =()=> {
    
     return (<div id="contact" className="bg-slate-900 relative overflow-hidden  z-[0]">
-        <div className="absolute w-[300px] inset-0 md:ml-[400px]  gradient-04 z-[-2]"/>
+        <motion.div variants={navVariants} initial="hidden" whileInView="show" className="absolute w-[300px] inset-0 md:ml-[400px]  gradient-04 z-[-2]"/>
        
 
 <Section title="Contact" >
 
 
-<div className="z-9">
+<motion.div variants={zoomIn(0.5,1)} initial="hidden" whileInView="show" className="z-9">
       <div className="mx-auto max-w-2xl text-center ">
         <p className="mt-10 text-[25px] leading-8 text-purple-800">
           I'm Available Contact Me
         </p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20 ">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 text-left  text-white">
+        <motion.div variants={zoomIn(0.5,1)} initial="hidden" whileInView="show" className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 text-left  text-white">
          
          
           <div className="sm:col-span-2">
@@ -50,7 +51,7 @@ import Section from '../section/Section'
             </div>
           </div>
           
-        </div>
+        </motion.div>
         <div className="mt-10">
           <button
             type="submit"
@@ -59,7 +60,7 @@ import Section from '../section/Section'
             Let's talk
           </button>
         </div>
-      </form></div>
+      </form></motion.div>
      </Section> 
      </div>
      

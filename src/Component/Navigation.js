@@ -2,7 +2,8 @@ import { Fragment, useState, useEffect } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import taissir from '../assets/img/taissir.jpg';
-
+import {motion} from "framer-motion"
+import {navVariants} from "../utils/motion"
 const navigation = [
   { name: 'Home', href: '#', current: true },
   { name: 'About', href: '#about', current: false },
@@ -60,8 +61,11 @@ export default function Navigation() {
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed w-full z-50">
       {({ open }) => (
-        <>
-          <div className="px-2 sm:px-6 lg:px-8">
+        <motion.div variants={navVariants}
+        initial="hidden"
+        whileInView="show"
+        >
+          <div className="px-2 sm:px-6 lg:px-8 ">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -127,7 +131,7 @@ export default function Navigation() {
               ))}
             </div>
           </Disclosure.Panel>
-        </>
+        </motion.div>
       )}
     </Disclosure>
   );

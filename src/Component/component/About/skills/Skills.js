@@ -2,7 +2,8 @@ import React, { useRef } from 'react'
 import IsVisible from 'react-is-visible'
 
 import { useContainerDimensions } from '../hooks'
-
+import {motion} from "framer-motion"
+import {slideIn} from "../../../../utils/motion";
 const Skills = () => {
   const skillsWrapper = useRef()
   const { width } = useContainerDimensions(skillsWrapper)
@@ -45,7 +46,7 @@ const Skills = () => {
   return (
     
 
-      <div className='md:m-32' style={{ position: 'relative', width: '100%', maxWidth: 600 }} >
+      <motion.div variants={slideIn("right","tween",0.5,1)} initial="hidden" whileInView="show" className='md:m-32' style={{ position: 'relative', width: '100%', maxWidth: 600 }} >
         <IsVisible once="false">
           {(isVisibleSkillsWrapper) => (
             <div
@@ -89,7 +90,7 @@ const Skills = () => {
             </div>
           )}
         </IsVisible>
-      </div>
+      </motion.div>
    
   )
 }

@@ -9,7 +9,7 @@ export default function Footer() {
           <h2 className="text-center text-lg font-semibold leading-8 text-white">
             You can find me here
           </h2>
-          <div className=" mx-auto mt-10 grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+          <div className="  mt-10 grid grid-cols-3   md:grid-cols-5 items-center justify-center ">
        
              <a href="https://www.facebook.com/taissir.hammouda.7"> <img className="w-[100px]" src={fb} /> </a>
              <a href="https://github.com/DevTaissirHammouda"> <img className="w-[100px]" src={git} /> </a>

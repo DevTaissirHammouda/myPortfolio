@@ -1,16 +1,17 @@
 import meta from "../../../../assets/img/Project/metavers.jpg";
 import movie from "../../../../assets/img/Project/MovieLand.jpg";
 import crypto from "../../../../assets/img/Project/Crypto.jpg";
-
+import {motion} from "framer-motion"
+import {fadeIn} from "../../../../utils/motion";
 import "./Card.css";
 
 const data = [
   { imge: meta, title: "MetaVerses", desc: "This Project done with nextJs and Framer motion" ,
-_link:'https://github.com/DevTaissirHammouda/metaV'},
+_link:'https://github.com/DevTaissirHammouda/metaV',_direction:"right", _delay:0.3},
   { imge: movie, title: "MovieLand", desc: "This Project done with ReactJs" ,
-  _link:'https://github.com/DevTaissirHammouda/MovieLand'},
+  _link:'https://github.com/DevTaissirHammouda/MovieLand',_direction:"up", _delay:0.5},
   { imge: crypto, title: "Crypto Price", desc: "This Project done with Angular" ,
-  _link:'https://github.com/DevTaissirHammouda/crypto-web-application'},
+  _link:'https://github.com/DevTaissirHammouda/crypto-web-application',_direction:"left", _delay:0.7},
 ];
 
 const Card = () => {
@@ -18,7 +19,7 @@ const Card = () => {
     <div className="flex flex-col md:flex-row justify-center items-center ">
       
       {data.map((item) => (
-        <div className="flip-card-container  w-[250px] md:w-[350px]" key={item.title}>
+        <motion.div variants={fadeIn(item._direction,"tween",item._delay,1)} initial="hidden" whileInView="show" className="flip-card-container  w-[250px] md:w-[350px]" key={item.title}>
           <div className="flip-card absolute ">
             <div className="card-front">
               <figure>
@@ -49,7 +50,7 @@ const Card = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
