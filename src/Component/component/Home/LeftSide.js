@@ -5,7 +5,7 @@ import {textVariant2 ,navVariants,fadeIn} from "../../../utils/motion";
 const LeftSide = () => {
     return(
         
-        <div className=" lg:ml-[150px] text-center md:text-left flex justify-center items-center ">
+        <div className=" lg:ml-[150px] text-center md:text-left flex justify-center items-center overflow-hidden ">
             <motion.div variants={navVariants}  initial="hidden"
         whileInView="show" className="absolute w-[300px] ml-[150px] inset-0 gradient-02  "/>
            <motion.div  initial="hidden"

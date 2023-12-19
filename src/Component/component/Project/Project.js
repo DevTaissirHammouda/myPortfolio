@@ -3,7 +3,7 @@ import Card from "./Card/Card";
 import {motion} from "framer-motion"
 import { slideIn ,navVariants} from "../../../utils/motion";
  const  Project =()=> {
-    return (<div id="Project" className="bg-slate-900 relative">
+    return (<div id="Project" className="bg-slate-900 relative overflow-hidden">
       <motion.div variants={navVariants} initial="hidden" whileInView="show" className="absu inset-0 w-[500px]  gradient-03 "/>
     <Section title="Project">
       

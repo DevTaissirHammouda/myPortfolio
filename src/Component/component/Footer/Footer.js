@@ -4,7 +4,7 @@ import lk from "../../../assets/icons/linkedin.png"
 import git from "../../../assets/icons/github.png"
 export default function Footer() {
     return (
-      <div className="bg-slate-900 py-24 sm:py-32 border-3 border-gray-50">
+      <div className="bg-slate-900 py-24 sm:py-32 border-3 border-gray-50 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-lg font-semibold leading-8 text-white">
             You can find me here

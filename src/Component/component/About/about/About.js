@@ -11,7 +11,7 @@ const About = () => {
     <div id="about" className='relative overflow-hidden '>
     <Section   title="About Me" >
        
-      <div  className="about-content text-left text-slate-50 h-full  ">
+      <div  className="about-content text-left text-slate-50 h-full overflow-hidden ">
         <motion.div variants={navVariants} initial="hidden" whileInView="show" className="absu w-[300px] md:ml-[150px]  gradient-01 bg-slate-400 "/>
         
           <motion.div initial="hidden" whileInView="show" variants={zoomIn(0.5,1)} className="about-text z-[9]  md:m-32">

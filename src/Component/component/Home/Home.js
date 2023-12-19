@@ -21,7 +21,7 @@ const Home = () => {
     return(
     <div>
     <div 
-       id="#" className="lg:w-100%  md:w-50%  w-25% h-full " style={{ backgroundImage: `url(${bgImg})` }}
+       id="#" className="lg:w-100%  md:w-50%  w-25% h-full overflow-hidden " style={{ backgroundImage: `url(${bgImg})` }}
     >
       {isSmall?<div  className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 relative " >
     <RightSide/><LeftSide/></div>
