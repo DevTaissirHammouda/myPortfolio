@@ -14,8 +14,8 @@ export default function Footer() {
              <a href="https://www.facebook.com/taissir.hammouda.7"> <img className="w-[100px]" src={fb} /> </a>
              <a href="https://github.com/DevTaissirHammouda"> <img className="w-[100px]" src={git} /> </a>
              <a href="https://www.linkedin.com/in/hammouda-taissir-1029a2201/"><img className="w-[100px]" src={lk} /> </a>
-              <div className="text-white mb-28 md:mb-0">taissir7ammouda@gmail.com</div>
-              <div className="text-white">+21692975377</div>
+              <div className="text-center text-white my-20 md:my-0">taissir7ammouda@gmail.com</div>
+              <div className="text-white mt-28 md:mt-0">+21692975377</div>
           </div>
         </div>
       </div>
