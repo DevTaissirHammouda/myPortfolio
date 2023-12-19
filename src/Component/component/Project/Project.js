@@ -12,7 +12,7 @@ import { slideIn ,navVariants} from "../../../utils/motion";
         
         <Card/>
         <motion.a variants={navVariants} initial="hidden" whileInView="show" href="https://github.com/DevTaissirHammouda?tab=repositories" target="_blank" className="">
-    <button className="bg-green-500 rounded-md text-white p-[5px] my-28">See More</button>
+    <button className="bg-[#3559E0] rounded-md text-white p-[5px] my-28">See More</button>
 </motion.a>
        
 </Section>

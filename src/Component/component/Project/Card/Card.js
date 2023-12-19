@@ -16,12 +16,12 @@ _link:'https://github.com/DevTaissirHammouda/metaV',_direction:"right", _delay:0
 
 const Card = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center ">
+    <div className="flex flex-col md:flex-row justify-center items-center mx-5 md:mx-0 ">
       
       {data.map((item) => (
-        <motion.div variants={fadeIn(item._direction,"tween",item._delay,1)} initial="hidden" whileInView="show" className="flip-card-container  w-[250px] md:w-[350px]" key={item.title}>
+        <motion.div variants={fadeIn(item._direction,"tween",item._delay,1)} initial="hidden" whileInView="show" className="flip-card-container mx-5  w-[250px] md:w-[300px]" key={item.title}>
           <div className="flip-card absolute ">
-            <div className="card-front">
+            <div className="card-front  ">
               <figure>
                 <div className="img-bg"></div>
                 <img src={item.imge} alt={item.title} />

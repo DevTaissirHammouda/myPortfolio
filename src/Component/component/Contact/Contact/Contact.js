@@ -7,42 +7,50 @@ import { useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
- const  Contact =()=> {
-   
+const Contact = () => {
   const form = useRef();
-
-
-
 
   const sendEmail = async (e) => {
     e.preventDefault();
-  
+
     if (!form.current || !form.current['from_name'] || !form.current['from_email'] || !form.current['message']) {
       toast.error('Form structure is incorrect. Please check your code.');
       return;
     }
-  
+
     const nameInput = form.current['from_name'];
     const emailInput = form.current['from_email'];
     const messageInput = form.current['message'];
-  
+
     if (!nameInput || !emailInput || !messageInput || !nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
       toast.error('Please fill in all required fields.');
       return;
     }
-  
-  
-  
+
     try {
-    
+      // Update the condition for the email
+      if (!/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
+        toast.error('Invalid email address. Please provide a valid email.');
+        return;
+      }
+
+      const emailData = {
+        from_name: nameInput.value.trim(),
+        from_email: emailInput.value.trim(),
+        message: messageInput.value.trim(),
+      };
+
+      // Use emailjs.send to send the email
+      await emailjs.send('service_637rszf', 'template_89ewlih', emailData, '3KpYiCNl0ARsQalbA');
+
+      // Clear form inputs on success
       nameInput.value = '';
       emailInput.value = '';
       messageInput.value = '';
-  
-  
+
       toast.success('Message sent successfully!');
     } catch (error) {
-      console.error(error.text);
+      console.error(error);
       toast.error('Error sending message. Please try again.');
     }
   };
@@ -56,7 +64,7 @@ import 'react-toastify/dist/ReactToastify.css';
     />
 
     <Section title="Contact">
-      <motion.div variants={zoomIn(0.5, 1)} initial="hidden" whileInView="show" className="z-9">
+      <motion.div variants={zoomIn(0.5, 1)} initial="hidden" whileInView="show" className="mx-5 md:mx-0 z-9">
         <div className="mx-auto max-w-2xl text-center ">
           <p className="mt-10 text-[25px] leading-8 text-purple-800">I'm Available Contact Me</p>
         </div>
